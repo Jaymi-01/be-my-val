@@ -15,12 +15,12 @@ export function TheQuestion() {
   const [noBtnPosition, setNoBtnPosition] = useState({ x: 0, y: 0 });
   const [noBtnScale, setNoBtnScale] = useState(1);
   const [yesPressed, setYesPressed] = useState(false);
-  const [animationData, setAnimationData] = useState<any>(null);
+  const [animationData, setAnimationData] = useState<object | null>(null);
 
   useEffect(() => {
     fetch(heartAnimationUrl)
       .then((res) => res.json())
-      .then((data) => setAnimationData(data))
+      .then((data) => setAnimationData(data as object))
       .catch((err) => console.error("Failed to load Lottie", err));
   }, []);
 
@@ -43,7 +43,7 @@ export function TheQuestion() {
 
     const random = (min: number, max: number) => Math.random() * (max - min) + min;
 
-    const interval: any = setInterval(function() {
+    const interval: NodeJS.Timeout = setInterval(function() {
       const timeLeft = animationEnd - Date.now();
 
       if (timeLeft <= 0) {
@@ -72,7 +72,7 @@ export function TheQuestion() {
             className="space-y-6"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-primary font-script">Yay! I Love You! 💖</h1>
-            <p className="text-xl text-muted-foreground font-sans">Best Valentine's Day Ever!</p>
+            <p className="text-xl text-muted-foreground font-sans">Let's Make It The Best Valentine's Day Ever!</p>
           </motion.div>
         ) : (
           <motion.div

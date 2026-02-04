@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/app/components/ui/card";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { FavouriteIcon } from "@hugeicons/core-free-icons";
+import Image from "next/image";
 
 const milestones = [
   {
@@ -59,11 +60,13 @@ export function Timeline() {
               {/* Content Card */}
               <div className="flex-1 w-full pl-8 md:pl-0">
                 <Card className="overflow-hidden border-accent/20 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
-                  <div className="h-48 overflow-hidden">
-                    <img 
+                  <div className="h-48 overflow-hidden relative">
+                    <Image 
                       src={milestone.image} 
                       alt={milestone.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                   <CardContent className="p-6 text-center md:text-left">

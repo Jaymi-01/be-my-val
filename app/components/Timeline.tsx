@@ -34,12 +34,15 @@ const milestones = [
 
 export function Timeline() {
   return (
-    <section className="py-20 px-4 md:px-8 max-w-4xl mx-auto">
-      <h2 className="text-4xl md:text-5xl text-center text-primary mb-16 font-script">Our Story</h2>
+    <section className="py-12 md:py-20 px-4 md:px-8 max-w-4xl mx-auto">
+      <h2 className="text-4xl md:text-5xl text-center text-primary mb-12 md:mb-16 font-script">Our Story</h2>
       
       <div className="relative">
-        {/* Vertical Line */}
+        {/* Vertical Line (Desktop) */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-accent/30 hidden md:block" />
+        
+        {/* Vertical Line (Mobile) */}
+        <div className="absolute left-4 top-0 bottom-0 w-1 bg-accent/30 md:hidden" />
 
         <div className="space-y-12">
           {milestones.map((milestone, index) => (
@@ -54,7 +57,7 @@ export function Timeline() {
               }`}
             >
               {/* Content Card */}
-              <div className="flex-1 w-full">
+              <div className="flex-1 w-full pl-8 md:pl-0">
                 <Card className="overflow-hidden border-accent/20 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
                   <div className="h-48 overflow-hidden">
                     <img 

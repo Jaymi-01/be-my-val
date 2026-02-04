@@ -29,15 +29,15 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Intro Hero */}
-      <section className="h-screen flex flex-col items-center justify-center text-center p-4">
-        <h1 className="text-6xl md:text-8xl text-primary font-script mb-6 animate-pulse">
+      <section className="min-h-screen flex flex-col items-center justify-center text-center p-4">
+        <h1 className="text-5xl md:text-8xl text-primary font-script mb-6 animate-pulse leading-tight">
           For My Favorite Person
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12">
+        <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 md:mb-12">
           I have a question for you... but first, let's look back.
         </p>
         <div className="animate-bounce">
-          <HugeiconsIcon icon={ArrowDown01Icon} className="w-10 h-10 text-primary" />
+          <HugeiconsIcon icon={ArrowDown01Icon} className="w-8 h-8 md:w-10 md:h-10 text-primary" />
         </div>
       </section>
 

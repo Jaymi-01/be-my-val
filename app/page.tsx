@@ -29,7 +29,7 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Intro Hero */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center p-4">
+      <section className="h-screen flex flex-col items-center justify-center text-center p-4">
         <h1 className="text-5xl md:text-8xl text-primary font-script mb-6 animate-pulse leading-tight">
           For My Favorite Person
         </h1>

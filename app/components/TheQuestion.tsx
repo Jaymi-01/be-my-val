@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import confetti from "canvas-confetti";
 import { Button } from "@/app/components/ui/button";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 // Dynamically import Lottie to avoid SSR issues
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -58,6 +59,29 @@ export function TheQuestion() {
 
   return (
     <section className="min-h-[80vh] flex flex-col items-center justify-center text-center p-4 relative overflow-hidden">
+      {/* Dancing Figure Animation - Using the Provided GIF */}
+      {yesPressed && (
+        <motion.div
+          initial={{ x: "-100vw", y: 0 }}
+          animate={{ 
+            x: "100vw",
+          }}
+          transition={{ 
+            x: { duration: 10, ease: "linear", repeat: Infinity },
+          }}
+          className="absolute bottom-20 z-20 pointer-events-none"
+        >
+          <Image 
+            src="/ijemy.gif" 
+            alt="Waltzing Couple" 
+            width={200}
+            height={140}
+            unoptimized
+            className="h-48 w-auto rounded-lg"
+          />
+        </motion.div>
+      )}
+
       <div className="max-w-md w-full flex flex-col items-center">
         {animationData && (
           <div className="w-48 h-48 md:w-64 md:h-64 mb-8">

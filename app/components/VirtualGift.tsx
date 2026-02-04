@@ -17,9 +17,9 @@ export function VirtualGift() {
   const [selectedFlower, setSelectedFlower] = useState<number | null>(null);
 
   return (
-    <section className="py-20 px-4 bg-secondary/30">
+    <section className="py-12 md:py-20 px-4 bg-secondary/30">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl text-primary mb-12 font-script">A Little Gift For You</h2>
+        <h2 className="text-4xl md:text-5xl text-primary mb-8 md:mb-12 font-script">A Little Gift For You</h2>
 
         <div className="min-h-[400px] flex items-center justify-center">
           <AnimatePresence mode="wait">
@@ -46,7 +46,7 @@ export function VirtualGift() {
                 animate={{ opacity: 1, y: 0 }}
                 className="w-full max-w-2xl"
               >
-                {!selectedFlower && selectedFlower !== 0 ? (
+                {selectedFlower === null ? (
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {flowers.map((flower, index) => (
                       <motion.div

@@ -67,7 +67,7 @@ export function TheQuestion() {
             x: "100vw",
           }}
           transition={{ 
-            x: { duration: 10, ease: "linear", repeat: Infinity },
+            x: { duration: 25, ease: "linear", repeat: Infinity },
           }}
           className="absolute bottom-20 z-20 pointer-events-none"
         >

@@ -64,11 +64,16 @@ export function TheQuestion() {
         <motion.div
           initial={{ x: "-100vw", y: 0 }}
           animate={{ 
-            x: "100vw",
+            x: ["-100vw", "0vw", "0vw", "100vw"],
+            rotateY: [0, 0, 720, 720],
           }}
           transition={{ 
-            x: { duration: 25, ease: "linear", repeat: Infinity },
+            duration: 25,
+            times: [0, 0.4, 0.6, 1],
+            ease: "easeInOut",
+            repeat: Infinity,
           }}
+          style={{ perspective: 1000 }}
           className="absolute bottom-20 z-20 pointer-events-none"
         >
           <Image 
